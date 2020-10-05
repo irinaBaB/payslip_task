@@ -1,3 +1,4 @@
+
 print ('Welcome to the payslip generator')
 
 # Input details: (
@@ -21,8 +22,6 @@ print ('Welcome to the payslip generator')
 # if I enter 31 of March - as start date = 1-31 of March
 
 
-
-
 def user_details():
     user_name = False
     surname = False
@@ -39,12 +38,4 @@ def user_details():
 
 
 user_details()
-
-#assuming we only firmly calculating monthly payslip, only based on start date
-#user entered start date ex: 3 of August
-#user entered end date ex: 23 of April
-# return should be : Pay Period: 01 August -  31 August
-def pay_period():
-    start_date=''
-    end_date=''
 
