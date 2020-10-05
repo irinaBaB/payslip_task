@@ -34,14 +34,17 @@ def user_details():
         elif len(surname) == 0:
             print(
                 "Sorry, the surname is incorrect, please enter the correct surname")
-        print(user_name.title(), surname.title())
+        print(f'Name: {user_name.title()} {surname.title()}')
         return (user_name.title(), surname.title())
-
 
 
 user_details()
 
 #assuming we only firmly calculating monthly payslip, only based on start date
+#user entered start date ex: 3 of August
+#user entered end date ex: 23 of April
+# return should be : Pay Period: 01 August -  31 August
 def pay_period():
     start_date=''
     end_date=''
+
