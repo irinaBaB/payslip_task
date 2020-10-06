@@ -7,7 +7,7 @@ range4 = range(87001, 180001)
 
 def gross_income():
     annual_salary = None
-    gross_salary = None
+    gross_income = None
 
     while annual_salary == None:
         annual_salary = input("Please enter your annual salary: ")
@@ -18,26 +18,35 @@ def gross_income():
             )
             break
         if annual_salary.isdigit() == True:
-            gross_salary = round(int(annual_salary) / 12, 2)
-            print(gross_salary)
-    return int(gross_salary)
+            gross_income = round(int(annual_salary) / 12)
+    return int(gross_income), int(annual_salary)
 
 
-def income_tax(gross_salary, income_tax=0):
-    if gross_salary in range1:
+def income_tax(annual_salary, income_tax=0):
+
+    if annual_salary in range1:
         #Nil tax
         income_tax = 0
-    elif gross_salary in (range2):
+    elif annual_salary in (range2):
         #19c for each $1 over $18200
-        income_tax = round(((gross_salary - 18200) * 0.19) / 12, 2)
-    elif gross_salary in range3:
+        income_tax = round(((annual_salary - 18200) * 0.19) / 12, 2)
+    elif annual_salary in range3:
         #$3572 plus 32.5c for each $1 over $87000
-        income_tax = round((3572 + (gross_salary - 37000) * 0.325) / 12, 2)
-    elif gross_salary in range4:
+        income_tax = round((3572 + (annual_salary - 37000) * 0.325) / 12, 2)
+    elif annual_salary in range4:
         #$19822 plus 37c for each $1 over $87000
-        income_tax = round((19872 + (gross_salary - 87000) * 0.37) / 12, 2)
-    elif gross_salary >= 180001:
+        income_tax = round((19872 + (annual_salary - 87000) * 0.37) / 12, 2)
+    elif annual_salary >= 180001:
         # $54232 plus 45c for each $1 over $180000
-        income_tax = round((54232 + (gross_salary - 180000) * 0.45) / 12, 2)
+        income_tax = round((54232 + (annual_salary - 180000) * 0.45) / 12, 2)
 
     return income_tax
+
+
+def net_income(gross_income, income_tax, net_income=0):
+    net_income = gross_income - income_tax
+    return net_income
+
+
+def super_k(gross_income):
+    return (round(gross_income * 0.09))
