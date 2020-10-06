@@ -48,5 +48,6 @@ def net_income(gross_income, income_tax, net_income=0):
     return net_income
 
 
-def super_k(gross_income):
-    return (round(gross_income * 0.09))
+def super_k(gross_income, rate=0):
+    rate = float(input("Please enter your super rate: "))
+    return (round(gross_income * (rate / 100)))

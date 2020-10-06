@@ -5,7 +5,7 @@ from datetime import date
 #user entered start date ex: 2020/04/03
 #user entered end date ex: 2020/07/03
 # use delta to calculate number of the days - > if more then 30 - return error -> pay period cannot be more then 30 days
-# return pay slip period based on start date????
+# return pay slip period based on start date
 
 
 def pay_period():
@@ -19,6 +19,7 @@ def pay_period():
     while start_date == '' and end_date == '':
         start_date = input('Enter start date in format yyyy/mm/dd : ')
         end_date = input('Enter end date in format yyyy/mm/dd : ')
+
         #case when user didn't enter anything
         if start_date == '':
             print('You did not entered start date')
@@ -46,14 +47,8 @@ def pay_period():
                     "Your pay period cannot be more then 30 days. Please enter correct end date"
                 )
                 break
-
+            #this payslip will be generated only based on start date plus it has fixed date
             print(
-                f'The start of pay period is : \n{start_date.day} of {start_date.strftime("%B")}'
-            )
-            print(
-                f'The end of pay period is : \n{end_date.day} of {end_date.strftime("%B")}'
-            )
+                f'Your  payslip will be generated from the  1st of {start_date.strftime("%B")} to 30st of {start_date.strftime("%B")}'
+                )
         return start_date, end_date
-
-
-pay_period()
