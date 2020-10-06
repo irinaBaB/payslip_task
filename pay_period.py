@@ -48,7 +48,4 @@ def pay_period():
                 )
                 break
             #this payslip will be generated only based on start date plus it has fixed date
-            print(
-                f'Your  payslip will be generated from the  1st of {start_date.strftime("%B")} to 30st of {start_date.strftime("%B")}'
-                )
-        return start_date, end_date
+        return start_date.strftime("%B")
