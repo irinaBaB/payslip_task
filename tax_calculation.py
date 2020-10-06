@@ -27,7 +27,7 @@ def income_tax(annual_salary, income_tax=0):
     if annual_salary in range1:
         #Nil tax
         income_tax = 0
-    elif annual_salary in (range2):
+    elif annual_salary in range2:
         #19c for each $1 over $18200
         income_tax = round(((annual_salary - 18200) * 0.19) / 12, 2)
     elif annual_salary in range3:
