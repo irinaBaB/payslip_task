@@ -1,6 +1,6 @@
-from pay_period import pay_period
+from input_details import payslip_details
 from tax_calculation import *
-from user_details import user_details
+
 
 
 print("Welcome to payslip generator!")
