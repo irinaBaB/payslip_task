@@ -9,7 +9,6 @@ blocks =['BO','XK','DQ','CP','NA','GT','RE','TG','QD','FS','JW','HU','VI','AN','
 def can_make_word(word):
     created_word=''
     block_current=blocks.copy()
-    print(block_current)
     for w in word.upper():
         for block in block_current:
             if w in block:
