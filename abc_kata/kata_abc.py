@@ -6,31 +6,26 @@
 blocks =['BO','XK','DQ','CP','NA','GT','RE','TG','QD','FS','JW','HU','VI','AN','OB','ER','FS','LY','PC','ZM']
 
 
-new_list=[]
-created_word=[]
-separator = ''
 def can_make_word(word):
-        for w in word.upper():
-            for block in blocks:
-                if w in block:
-                    #create a counter of the word that I do not use same letter again
-                    new_list.append(block)
-                    blocks.remove(block)
-                    created_word.append(w)
-                    #print(f'letter {w},{block} is in the list ')
-                    break
+    created_word=''
+    block_current=blocks.copy()
+    print(block_current)
+    for w in word.upper():
+        for block in block_current:
+            if w in block:
+                created_word += w
+                block_current.remove(block)
+                break
 
-                else:
-                    pass
-                    #print('FALSE')
+    print(f"created_word: {created_word}")
+    print(f"word: {word}")
+    print(f"blocks remained: {blocks}")
+    
+    if created_word == word.upper():
+        print('TRUE')
+    else:
+        print('FALSE')
 
-        print(created_word)
-        if len(separator.join(created_word)) == len(word):
-            print('TRUE')
-        else:
-            print('NOPE FALSE')
-
-        created_word.clear()
 
 
 # Currently it's checking every time same letter multiple times in the blocks
