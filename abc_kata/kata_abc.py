@@ -17,10 +17,6 @@ def can_make_word(word):
                 block_current.remove(block)
                 break
 
-    print(f"created_word: {created_word}")
-    print(f"word: {word}")
-    print(f"blocks remained: {blocks}")
-    
     if created_word == word.upper():
         print('TRUE')
     else:
