@@ -16,7 +16,36 @@ class Card():
     def __str__(self):
         return self.rank + ' of ' + self.suit
 
-    card = Card()
+
+class Deck():
+
+    def __init__(self):
+        self.cards= []
+
+        for suit in suits:
+            for rank in ranks:
+                new_card = Card(suit,rank)
+                self.cards.append(new_card)
+
+    def __str__(self):
+        output = ""
+        for card in self.cards:
+            output += card.rank  + ' of ' + card.suit + '\n'
+        return output
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
