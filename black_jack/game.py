@@ -9,10 +9,10 @@ ranks = ('Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten',
 class Card():
 
     def __init__(self,suit,rank):
-        suit = suit
-        rank = rank
+        self.suit = suit
+        self.rank = rank
 
     def __str__(self):
-        return self.rank + 'of' + self.suit
+        return self.rank + ' of ' + self.suit
 
 
