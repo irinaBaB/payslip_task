@@ -6,6 +6,7 @@ from game import Deck
 
 input_value = input ("enter the value: ")
 deck = Deck()
+deck.shuffle()
 while input_value =='1':
     print(deck)
     input_value = input ("enter the value: ")

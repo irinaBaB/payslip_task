@@ -1,3 +1,4 @@
+import random
 from random import shuffle
 
 suits=('Hearts','Diamonds','Spades','Clubs')
@@ -28,10 +29,15 @@ class Deck():
                 self.cards.append(new_card)
 
     def __str__(self):
-        output = ""
+        all_cards = ""
         for card in self.cards:
-            output += card.rank  + ' of ' + card.suit + '\n'
-        return output
+            all_cards += card.rank  + ' of ' + card.suit + '\n'
+        return all_cards
+
+    def shuffle(self):
+        random.shuffle(self.cards)
+
+
 
 
 
