@@ -5,7 +5,7 @@ from cards import Deck
 from players import Player
 
 
-input_value = input ("enter the value: ")
+input_value = input ("enter the value 1 or 2 : ")
 deck = Deck()
 player = Player()
 dealer= Player()
@@ -15,8 +15,8 @@ player.add_card(deck.deal_card())
 dealer.add_card(deck.deal_card())
 dealer.add_card(deck.deal_card())
 while input_value =='1':
-    print(player)
-    print(dealer)
+    print(player, player.value)
+    print(dealer,dealer.value)
     input_value = input ("enter the value: ")
 
 if input_value == '2':

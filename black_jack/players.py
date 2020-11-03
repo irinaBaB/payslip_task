@@ -1,10 +1,16 @@
+from cards import values
+
 class Player:
 
     def __init__(self):
         self.player_hands = []
+        self.value = 0
+
 
     def add_card(self,card):
+
         self.player_hands.append(card)
+        self.value+=values[card.rank]
 
     def __str__(self):
         player_cards = ""
