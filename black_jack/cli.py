@@ -31,18 +31,20 @@ while input_value =='1':
     print(f"Player has got: \n{player} \n\t you are currently at : { player.value}")
     print((f"Dealer has got: \n{dealer} \n\t you are currently at: { dealer.value}"))
 
-    # adding hit or stand functions for player
     while game == True:
-        response = int(input("Hit or stay? (Hit = 1, Stay = 0)"))
+        response = int(input(" Hit or stay? (Hit = 1, Stay = 0)"))
         if response == 1:
             new_card = deck.deal_card()
-            print(new_card)
+            print(f"You took the card: {new_card}")
 
-            print(f"You took the card {new_card}")
         elif response ==0:
             print('Player is staying, now is dealer turn')
             game == False
             break
+        #Adjusting the total score - player
+        player.add_card(new_card)
+        player.ace_adjust()
+        print(f"\tPlayer with hand : \t\n{player} \n\t you are currently at : { player.value}")
 
 
     input_value = input ("enter the value: ")
