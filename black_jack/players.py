@@ -9,14 +9,13 @@ class Player:
 
 
     def add_card(self,card):
-
         self.player_hands.append(card)
         self.value+=values[card.rank]
         if card.rank=='Ace':
             self.aces+=1
 
     def ace_adjust(self):
-        if self.value >=21 and self.aces>0:
+        if self.value >21 and self.aces>0:
             self.aces -=1
             self.value -=10
 
