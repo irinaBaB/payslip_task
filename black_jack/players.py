@@ -12,6 +12,9 @@ class Player:
         self.player_hands.append(card)
         self.value+=values[card.rank]
 
+    #def ace_adjust(self,card):
+
+
     def __str__(self):
         player_cards = ""
         for card in self.player_hands:
@@ -19,7 +22,4 @@ class Player:
         return player_cards
 
 
-#player1
-#player2 diller
-# need to add card to player
 
