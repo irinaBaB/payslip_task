@@ -19,6 +19,7 @@ class Player:
             self.aces -=1
             self.value -=10
 
+
     def __str__(self):
         player_cards = ""
         for card in self.player_hands:
