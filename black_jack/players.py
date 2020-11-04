@@ -23,8 +23,10 @@ class Player:
             player_cards += card.rank  + ' of ' + card.suit + '\n'
         return player_cards
 
-    def show_cards(self,dealer,player):
-        pass
+    def show_cards(self,actor):
+
+        print("Player has got: \n\t {},".format(actor) + "you are currently at {}:".format(actor.value))
+
 
 
 

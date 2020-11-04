@@ -18,11 +18,16 @@ class BlackJack:
                 actor.add_card(new_card)
                 if actor.value > 21:
                     game=False
-                    break
+
 
             elif response ==0:
                 print(f'{actor} is staying, now is dealer turn')
-                game = False
+                while actor.value <=17:
+                    actor.add_card(new_card)
+                    print(f"You took the card: {new_card}")
+                
+
+
 
             #Adjusting the total score - player
 
