@@ -3,6 +3,7 @@ from cards import Card
 from cards import values
 from cards import Deck
 from players import Player
+from blackjack import hit_stay
 
 game = True
 
@@ -29,23 +30,10 @@ dealer.ace_adjust()
 
 while input_value =='1':
     print(f"Player has got: \n{player} \n\t you are currently at : { player.value}")
+    hit_stay(deck,player)
+
     print((f"Dealer has got: \n{dealer} \n\t you are currently at: { dealer.value}"))
-
-    while game == True:
-        response = int(input(" Hit or stay? (Hit = 1, Stay = 0)"))
-        if response == 1:
-            new_card = deck.deal_card()
-            print(f"You took the card: {new_card}")
-
-        elif response ==0:
-            print('Player is staying, now is dealer turn')
-            game == False
-            break
-        #Adjusting the total score - player
-        player.add_card(new_card)
-        player.ace_adjust()
-        print(f"\tPlayer with hand : \t\n{player} \n\t you are currently at : { player.value}")
-
+    hit_stay(deck,dealer)
 
     input_value = input ("enter the value: ")
 
