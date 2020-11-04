@@ -24,7 +24,7 @@ dealer.add_card(deck.deal_card())
 
 
 while input_value =='1':
-    print("Player has got:\t\n {},".format(player)[0:-1] + "you are currently at {}:".format(player.value))
+    print("Player bla bla has got:\t\n {},".format(player)[0:-1] + "you are currently at {}:".format(player.value))
     blackjack.hit_stay(deck,player)
     if player.value > 21:
         print ("\n")
@@ -34,11 +34,17 @@ while input_value =='1':
 
 
     elif player.value == 21:
-        print(f"You win!!!!")
+        print(f"******You win!!!!")
         game= False
 
     print ("\n")
-    print((f"Dealer has got: \n{dealer} \n\t you are currently at: { dealer.value}"))
+    print((f"Dealer** has got: \n{dealer} \n\t you are currently at: { dealer.value}"))
+    while dealer.value <=17:
+        dealer_card = deck.deal_card()
+        dealer.add_card(dealer_card)
+        print(f"****You took the card: {dealer_card}")
+        print((f"****You got: \n{dealer} \n\t you are currently at: { dealer.value}"))
+
     blackjack.hit_stay(deck,dealer)
     print ("\n")
     if dealer.value >21:
