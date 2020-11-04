@@ -26,7 +26,16 @@ dealer.add_card(deck.deal_card())
 while input_value =='1':
     print(f"Player has got: \n\t {player} \n\t you are currently at : { player.value}")
     blackjack.hit_stay(deck,player)
+    if player.value > 21:
+        print (f"You are at currently at Bust!")
+        print("\t With the hand :{},".format(player.value),*player.player_hands,sep='\n')
+        game= False
 
+    elif player.value == 21:
+        print(f"You win!!!!")
+        game= False
+        break
+    print ("\n")
     print((f"Dealer has got: \n{dealer} \n\t you are currently at: { dealer.value}"))
     blackjack.hit_stay(deck,dealer)
 

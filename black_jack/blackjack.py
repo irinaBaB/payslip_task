@@ -17,10 +17,7 @@ class BlackJack:
                 print(f"You took the card: {new_card}")
                 actor.add_card(new_card)
                 if actor.value > 21:
-                    print (f"You bust!!!")
-                    game= False
-                elif actor.value == 21:
-                    print(f"You win!!!!")
+                    game=False
                     break
 
             elif response ==0:
@@ -29,4 +26,4 @@ class BlackJack:
 
             #Adjusting the total score - player
 
-            print(f"\tPlayer with hand : \t\n{actor} \n\t you are currently at : { actor.value}")
+            #print(f"\tPlayer with hand : \t\n{actor} \n\t you are currently at : { actor.value}")
