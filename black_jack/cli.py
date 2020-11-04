@@ -3,14 +3,13 @@ from cards import Card
 from cards import values
 from cards import Deck
 from players import Player
-from blackjack import hit_stay
-
-game = True
+from blackjack import BlackJack
 
 
 input_value = input ("enter the value 1 or 2 : ")
 # creating a deck of the cards
 deck = Deck()
+blackjack = BlackJack()
 #introducing two players player and dealer
 player = Player()
 dealer= Player()
@@ -23,17 +22,13 @@ player.add_card(deck.deal_card())
 dealer.add_card(deck.deal_card())
 dealer.add_card(deck.deal_card())
 
-#adjust for ace
-player.ace_adjust()
-dealer.ace_adjust()
-
 
 while input_value =='1':
-    print(f"Player has got: \n{player} \n\t you are currently at : { player.value}")
-    hit_stay(deck,player)
+    print(f"Player has got: \n\t {player} \n\t you are currently at : { player.value}")
+    blackjack.hit_stay(deck,player)
 
     print((f"Dealer has got: \n{dealer} \n\t you are currently at: { dealer.value}"))
-    hit_stay(deck,dealer)
+    blackjack.hit_stay(deck,dealer)
 
     input_value = input ("enter the value: ")
 

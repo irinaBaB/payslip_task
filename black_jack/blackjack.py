@@ -16,7 +16,6 @@ class BlackJack:
                 new_card = deck.deal_card()
                 print(f"You took the card: {new_card}")
                 actor.add_card(new_card)
-                actor.ace_adjust()
 
             elif response ==0:
                 print(f'{actor} is staying, now is dealer turn')

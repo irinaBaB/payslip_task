@@ -13,13 +13,11 @@ class Player:
         self.value+=values[card.rank]
         if card.rank=='Ace':
             self.aces+=1
-
-    def ace_adjust(self):
         if self.value >21 and self.aces>0:
             self.aces -=1
             self.value -=10
 
-
+    
     def __str__(self):
         player_cards = ""
         for card in self.player_hands:
