@@ -16,6 +16,12 @@ class BlackJack:
                 new_card = deck.deal_card()
                 print(f"You took the card: {new_card}")
                 actor.add_card(new_card)
+                if actor.value > 21:
+                    print (f"You bust!!!")
+                    game= False
+                elif actor.value == 21:
+                    print(f"You win!!!!")
+                    break
 
             elif response ==0:
                 print(f'{actor} is staying, now is dealer turn')
