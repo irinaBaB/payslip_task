@@ -24,9 +24,7 @@ class BlackJack:
                 print(f'You are staying now')
                 game=False
                 break
-                # while actor.value <=17:
-                #     actor.add_card(new_card)
-                #     print(f"You took the card: {new_card}")
+               
 
 
 

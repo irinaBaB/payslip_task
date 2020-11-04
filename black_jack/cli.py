@@ -30,11 +30,12 @@ while input_value =='1':
         print ("\n")
         print ("You are at currently at Bust!")
         print("\t With the hand :{}".format(player.value),*player.player_hands,sep='\n')
+        print("Dealer win!!!!")
         break
 
 
     elif player.value == 21:
-        print(f"******You win!!!!")
+        print(f"You win!!!!")
         game= False
 
     print ("\n")
@@ -50,7 +51,20 @@ while input_value =='1':
     if dealer.value >21:
         print("You are at currently at Bust!")
         print((f"Dealer has got: \n{dealer} \n\t you are currently at: { dealer.value}"))
+        print("Player win!!!!")
         break
+
+    elif dealer.value == 21:
+        print(f"Dealer win!!!!")
+        game= False
+
+    if dealer.value > player.value:
+        print(f"Dealer win!!!!")
+    elif dealer.value == player.value == 21:
+        print("Game is tie..")
+    elif player.value > dealer.value:
+        print(f"Player win!!!!")
+
 
 input_value = input ("enter the value: ")
 
