@@ -9,16 +9,16 @@ class BlackJack:
         while game == True:
             response = int(input(" Hit or stay? (Hit = 1, Stay = 0)"))
             if response == 1:
-                new_card = deck.deal_card()
-                print(f" this player took the card: {new_card}")
-                actor_hand.add_card(new_card)
-
+                self.hit(deck,actor_hand)
             elif response == 0:
                 print(f'You are staying now')
                 game=False
                 break
 
-
+    def hit(self,deck,actor_hand):
+        new_card = deck.deal_card()
+        print(f" this player took the card: {new_card}")
+        actor_hand.add_card(new_card)
 
     def check_winner(self,dealer,player):
         if dealer.value > player.value:
