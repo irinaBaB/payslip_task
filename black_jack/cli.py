@@ -36,7 +36,7 @@ while input_value =='1':
 
 
     print ("\n")
-    print((f"Dealer** has got: \n{dealer} \n\t you are currently at: { dealer.value}"))
+    print((f"Dealer has got: \n{dealer} \n\t you are currently at: { dealer.value}"))
     if player.value < 21:
         if dealer.value ==21 or dealer.value >21:
             print("Dealer has blackjack - he won!")
@@ -54,7 +54,7 @@ while input_value =='1':
                     break
 
 
-        blackjack.check_winner(dealer,player)
+    blackjack.check_winner(dealer,player)
 
 
     input_value = input("Do you want to play again?, enter '1' = Yes, '0'= No: ")
