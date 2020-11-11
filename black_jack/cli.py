@@ -1,8 +1,6 @@
 
-from cards import Card
-from cards import values
-from cards import Deck
-from players import Person
+from cards import Card,values,Deck
+from hand import Person
 from blackjack import BlackJack
 
 
@@ -12,10 +10,11 @@ deck = Deck()
 blackjack = BlackJack()
 #introducing two players player and dealer
 player = Person()
-dealer= Person()
+dealer = Person()
 #shuffle deck
 deck.shuffle()
-#player taking 2 cards
+
+
 
 while input_value =='1':
 
@@ -27,6 +26,7 @@ while input_value =='1':
 
     print("Player has got:\t\n {},".format(player)[0:-1] + "you are currently at {}:".format(player.value))
     blackjack.hit_stay(deck,player)
+    blackjack.show_cards(player,dealer)
     if player.value > 21:
         print ("\n")
         print ("You are at currently at Bust!")
@@ -41,13 +41,14 @@ while input_value =='1':
         dealer_card = deck.deal_card()
         dealer.add_card(dealer_card)
         print(f"You took the card: {dealer_card}")
-        print((f"You got: \n{dealer} \n\t you are currently at: { dealer.value}"))
+        print(f"You got: \n{dealer} \n\t you are currently at: { dealer.value}")
 
     blackjack.hit_stay(deck,dealer)
+    blackjack.show_cards(player, dealer)
     print ("\n")
     if dealer.value >21:
         print("You are at currently at Bust!")
-        print((f"Dealer has got: \n{dealer} \n\t you are currently at: { dealer.value}"))
+        print(f"Dealer has got: \n{dealer} \n\t you are currently at: { dealer.value}")
         print("Player win!!!!")
         break
 
