@@ -35,11 +35,5 @@ class Person:
 
 
 
-    def show_cards(self,actor):
-
-        print("Player has got: \n\t {},".format(actor) + "you are currently at {}:".format(actor.value))
-
-
-
 
 

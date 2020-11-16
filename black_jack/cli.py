@@ -28,25 +28,27 @@ while input_value =='1':
     print("Player has got:\t\n {},".format(player)[0:-1] + "you are currently at {}:".format(player.value))
     blackjack.hit_stay(deck,player)
     blackjack.show_cards(player,dealer)
-    if player.value > 21:
+
+    if blackjack.is_actor_bust(player):
         print ("\n")
         print ("You are at currently at Bust!")
         print("Dealer win!!!!")
+    elif blackjack.is_actor_blackjack(player):
+        print("Player win!!!!")
 
 
-    elif player.value < 21:
+    else:
         print("\n")
         print((f"Dealer has got: \n{dealer} \n\t you are currently at: { dealer.value}"))
+        while dealer.value < 17 or blackjack.is_actor_bust(dealer):
+            blackjack.hit(deck, dealer)
+
+
+        blackjack.show_cards(player, dealer)
         if dealer.value ==21 or dealer.value >21:
-            #print("Dealer has blackjack - he won!")
-            while dealer.value <17:
 
-                blackjack.hit(deck,dealer)
-
-                blackjack.hit_stay(deck,dealer)
-                blackjack.show_cards(player, dealer)
                 print ("\n")
-                if dealer.value >21:
+                if blackjack.is_actor_bust(dealer):
                     print("You are at currently at Bust!")
                     print(f"Dealer has got: \n{dealer} \n\t you are currently at: { dealer.value}")
                     print("Player win!!!!")
@@ -54,9 +56,6 @@ while input_value =='1':
 
 
         blackjack.check_winner(dealer,player)
-
-    elif dealer.value == player.value:
-        print("Game is tie..")
 
 
     input_value = input("Do you want to play again?, enter '1' = Yes, '0'= No: ")

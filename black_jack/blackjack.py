@@ -4,12 +4,12 @@ class BlackJack:
     def __init__(self):
         pass
 
-    def hit_stay(self,deck,actor_hand):
+    def hit_stay(self,deck,actor):
         game = True
-        while game == True:
+        while game and not self.is_actor_bust(actor):
             response = int(input(" Hit or stay? (Hit = 1, Stay = 0)"))
             if response == 1:
-                self.hit(deck,actor_hand)
+                self.hit(deck,actor)
             elif response == 0:
                 print(f'You are staying now')
                 game=False
@@ -34,5 +34,16 @@ class BlackJack:
         print("Dealer's hand:", dealer.value)
         print("\nPlayer's hand:", *player.hand_cards, sep='\n')
         print("Player's hand:", player.value)
+
+
+    def is_actor_bust(self,actor):
+        actor.value > 21
+
+    def is_actor_blackjack(self,actor):
+        actor.value==21
+
+
+
+
 
 
