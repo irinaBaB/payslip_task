@@ -3,8 +3,8 @@ from cards import Card,values,Deck
 from hand import Person
 from blackjack import BlackJack
 
+input_value = '1'
 
-input_value = input ("enter the value 1 or 2 : ")
 # creating a deck of the cards
 deck = Deck()
 blackjack = BlackJack()

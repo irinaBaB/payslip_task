@@ -5,14 +5,14 @@ class BlackJack:
         pass
 
     def hit_stay(self,deck,actor):
-        isHitAgain = True
-        while isHitAgain and not self.is_actor_bust(actor):
+        is_hit_again = True
+        while is_hit_again and not self.is_actor_bust(actor):
             response = int(input("Hit or stay? (Hit = 1, Stay = 0)"))
             if response == 1:
                 self.hit(deck,actor)
             elif response == 0:
                 print(f'You are staying now')
-                isHitAgain = False
+                is_hit_again = False
                 break
 
     def hit(self,deck,actor_hand):
